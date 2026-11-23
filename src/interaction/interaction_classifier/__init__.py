@@ -1,0 +1,1 @@
+from .geometric import GeometricInteractionClassifier, INTERACTION_LABELS
