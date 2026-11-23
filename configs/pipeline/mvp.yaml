@@ -1,0 +1,17 @@
+# Section 12 MVP: 3 synced cameras, known calibration -> 3D humans + objects with global IDs.
+cameras: configs/cameras/rig.yaml
+perception:
+  detector: {type: yolo, weights: yolo11m.pt, conf_threshold: 0.3, device: "cuda:0"}
+  pose: {type: yolo_pose, weights: yolo11m-pose.pt, device: "cuda:0"}
+  hands: null
+  segmentation: null
+tracking:
+  bytetrack: {high_thresh: 0.5, low_thresh: 0.1, new_track_thresh: 0.6, max_age: 30}
+cross_camera: {epipolar_thresh_px: 30.0, min_affinity: 0.3}
+global_ids: {max_3d_dist: 0.5}
+reconstruction: {method: ransac_nonlinear, conf_thresh: 0.3}
+interaction: {contact_dist: 0.05}
+output:
+  dir: outputs/mvp
+  save_scene_jsonl: true
+  save_visualization: true

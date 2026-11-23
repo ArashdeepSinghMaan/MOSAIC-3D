@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "detections",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "camera_id",
+      "frame_id",
+      "class",
+      "bbox"
+    ],
+    "properties": {
+      "camera_id": {
+        "type": "string"
+      },
+      "frame_id": {
+        "type": "integer"
+      },
+      "timestamp": {
+        "type": "number"
+      },
+      "class": {
+        "type": "string"
+      },
+      "bbox": {
+        "type": "array",
+        "items": {
+          "type": "number"
+        },
+        "minItems": 4,
+        "maxItems": 4
+      },
+      "confidence": {
+        "type": "number"
+      },
+      "local_track_id": {
+        "type": "integer"
+      },
+      "global_id": {
+        "type": "integer"
+      },
+      "mask_rle": {
+        "type": "object"
+      },
+      "occlusion": {
+        "enum": [
+          "none",
+          "partial",
+          "full"
+        ]
+      }
+    }
+  }
+}

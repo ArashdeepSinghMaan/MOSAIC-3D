@@ -1,0 +1,17 @@
+rig_name: lab_rig_3cam
+calibration_dir: configs/cameras
+sources:
+  - {camera_id: cam_01, uri: data/recordings/recording_001/videos/cam_01.mp4}
+  - {camera_id: cam_02, uri: data/recordings/recording_001/videos/cam_02.mp4}
+  - {camera_id: cam_03, uri: data/recordings/recording_001/videos/cam_03.mp4}
+synchronization:
+  tolerance_s: 0.0167        # 1/60 s
+  require_all: true
+  time_offsets: {cam_01: 0.0, cam_02: 0.0, cam_03: 0.0}
+calibration:
+  intrinsic:
+    board: charuco           # checkerboard | charuco
+    checkerboard: {pattern: [9, 6], square_size: 0.025}
+    charuco: {squares: [7, 5], square_len: 0.04, marker_len: 0.03, dictionary: DICT_5X5_100}
+  validation:
+    max_reprojection_error_px: 1.0

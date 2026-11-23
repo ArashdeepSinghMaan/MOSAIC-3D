@@ -1,0 +1,11 @@
+association:
+  epipolar_thresh_px: 30.0
+  w_geometry: 0.7
+  w_appearance: 0.3
+  min_affinity: 0.3
+global_ids:
+  start_ids: {person: 1001, object: 2001}
+  max_3d_dist: 0.5
+  min_app_sim: 0.6
+  forget_after: 10.0
+reid: {type: osnet, model_name: osnet_x1_0}

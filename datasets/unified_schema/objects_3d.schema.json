@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "objects_3d",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "timestamp",
+      "global_id",
+      "class",
+      "position"
+    ],
+    "properties": {
+      "timestamp": {
+        "type": "number"
+      },
+      "global_id": {
+        "type": "integer"
+      },
+      "class": {
+        "type": "string"
+      },
+      "position": {
+        "type": "array",
+        "items": {
+          "type": "number"
+        },
+        "minItems": 3,
+        "maxItems": 3
+      },
+      "rotation": {
+        "type": "array",
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "minItems": 3,
+        "maxItems": 3
+      },
+      "model_id": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+# Copy this folder to experiments/exp_XXX_<name>/ for each run (Section 8).
+experiment:
+  id: exp_000_template
+  question: "Does weighted nonlinear triangulation beat linear DLT on CMU Panoptic?"
+  baseline: {module: reconstruction, method: linear}
+  comparison: {module: reconstruction, method: ransac_nonlinear}
+dataset:
+  name: cmu_panoptic
+  version: v0.1
+  split: splits/test.json
+model:
+  architecture: n/a
+training: null
+evaluation:
+  metrics: [mpjpe, pa_mpjpe, reprojection_error, temporal_jitter]
+  report_latency: true
+  report_vram: true
+  failure_slices: [partial_occlusion, motion_blur, sync_error]
+tracking:
+  backend: mlflow
+  uri: http://localhost:5000
+seed: 0

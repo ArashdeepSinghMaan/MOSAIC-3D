@@ -1,0 +1,8 @@
+# Inference image with TensorRT for Phase 8 optimisation
+FROM nvcr.io/nvidia/tensorrt:24.05-py3
+WORKDIR /workspace/MOSAIC-3D
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
+RUN pip install --no-cache-dir -e .
+ENTRYPOINT ["bash", "docker/entrypoint.sh"]

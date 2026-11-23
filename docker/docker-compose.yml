@@ -1,0 +1,17 @@
+services:
+  mosaic3d:
+    build: { context: .., dockerfile: Dockerfile }
+    image: mosaic3d:latest
+    command: ["api"]
+    ports: ["8000:8000"]
+    volumes:
+      - ../data:/workspace/MOSAIC-3D/data
+      - ../outputs:/workspace/MOSAIC-3D/outputs
+    deploy:
+      resources:
+        reservations:
+          devices: [{ driver: nvidia, count: all, capabilities: [gpu] }]
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:latest
+    command: mlflow server --host 0.0.0.0 --port 5000
+    ports: ["5000:5000"]

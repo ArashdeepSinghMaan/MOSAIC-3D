@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "metadata",
+  "type": "object",
+  "required": [
+    "recording_id",
+    "environment",
+    "cameras",
+    "fps"
+  ],
+  "properties": {
+    "recording_id": {
+      "type": "string"
+    },
+    "environment": {
+      "enum": [
+        "industrial",
+        "agriculture",
+        "warehouse",
+        "general"
+      ]
+    },
+    "source_dataset": {
+      "type": "string"
+    },
+    "subject_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cameras": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "fps": {
+      "type": "number"
+    },
+    "duration_s": {
+      "type": "number"
+    },
+    "license": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

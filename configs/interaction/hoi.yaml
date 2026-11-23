@@ -1,0 +1,12 @@
+labels: [none, approaching, reaching, grasping, holding, moving, using, releasing, placing]
+geometric:
+  approach_dist: 0.6
+  reach_dist: 0.25
+  contact_dist: 0.05
+  approach_speed: 0.1
+  move_speed: 0.05
+  hold_frames: 5
+learned:
+  model: edge_gatv2
+  hidden: 128
+  layers: 3

@@ -1,0 +1,10 @@
+# method: linear | weighted | ransac | ransac_nonlinear
+method: ransac_nonlinear
+conf_thresh: 0.3
+ransac_thresh_px: 15.0
+undistort: true
+smooth: true
+temporal_filter: {type: one_euro, min_cutoff: 1.0, beta: 0.05}
+object_3d:
+  level: 1                    # 1 = centre only, 2 = 6-DoF
+  thresh_px: 25.0

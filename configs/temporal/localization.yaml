@@ -1,0 +1,4 @@
+model: {type: mstcn, stages: 4, layers: 10, channels: 64}
+fps: 30
+background_class: 0
+eval: {tiou_thresholds: [0.1, 0.25, 0.5]}

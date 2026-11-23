@@ -1,0 +1,7 @@
+baseline:   {type: yolo_pose, weights: yolo11m-pose.pt, device: "cuda:0"}
+comparison:
+  type: rtmpose
+  config: rtmpose-m_8xb256-420e_coco-256x192.py
+  checkpoint: rtmpose-m_simcc-coco_pt-aic-coco_420e-256x192.pth
+  device: "cuda:0"
+skeleton: coco17

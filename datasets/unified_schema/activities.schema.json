@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "activities",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "person_id",
+      "level",
+      "label",
+      "start",
+      "end"
+    ],
+    "properties": {
+      "person_id": {
+        "type": "integer"
+      },
+      "level": {
+        "enum": [
+          "primitive",
+          "interaction",
+          "task"
+        ]
+      },
+      "label": {
+        "type": "string"
+      },
+      "start": {
+        "type": "number"
+      },
+      "end": {
+        "type": "number"
+      },
+      "parent": {
+        "type": [
+          "string",
+          "null"
+        ]
+      }
+    }
+  }
+}

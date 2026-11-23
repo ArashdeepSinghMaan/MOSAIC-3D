@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "interactions",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "person_id",
+      "object_id",
+      "label",
+      "start",
+      "end"
+    ],
+    "properties": {
+      "person_id": {
+        "type": "integer"
+      },
+      "object_id": {
+        "type": "integer"
+      },
+      "hand": {
+        "enum": [
+          "left",
+          "right",
+          "both",
+          "body"
+        ]
+      },
+      "label": {
+        "enum": [
+          "approaching",
+          "reaching",
+          "grasping",
+          "holding",
+          "moving",
+          "using",
+          "releasing",
+          "placing"
+        ]
+      },
+      "start": {
+        "type": "number"
+      },
+      "end": {
+        "type": "number"
+      }
+    }
+  }
+}

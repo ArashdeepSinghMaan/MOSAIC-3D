@@ -1,0 +1,7 @@
+baseline:   {type: yolo,   weights: yolo11m.pt,  imgsz: 640, conf_threshold: 0.3, device: "cuda:0"}
+comparison: {type: rtdetr, weights: rtdetr-l.pt, imgsz: 640, conf_threshold: 0.3, device: "cuda:0"}
+classes:
+  common: [person]
+  industrial: [screwdriver, wrench, drill, component, hammer]
+  agriculture: [fruit, shears, basket, branch, crate]
+  warehouse: [package, box, pallet, trolley, scanner]

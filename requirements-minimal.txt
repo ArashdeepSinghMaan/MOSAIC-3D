@@ -1,0 +1,6 @@
+# Enough to run the geometry core and the unit tests (no GPU / models)
+numpy>=1.26
+scipy>=1.11
+opencv-python-headless>=4.9
+pyyaml>=6.0
+pytest>=8.0

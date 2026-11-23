@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "poses_3d",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "timestamp",
+      "global_id",
+      "skeleton",
+      "joints"
+    ],
+    "properties": {
+      "timestamp": {
+        "type": "number"
+      },
+      "global_id": {
+        "type": "integer"
+      },
+      "skeleton": {
+        "type": "string"
+      },
+      "joints": {
+        "type": "array",
+        "items": {
+          "oneOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 3,
+              "maxItems": 3
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "description": "world metres"
+      },
+      "left_hand": {
+        "type": "array",
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      },
+      "right_hand": {
+        "type": "array",
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      }
+    }
+  }
+}

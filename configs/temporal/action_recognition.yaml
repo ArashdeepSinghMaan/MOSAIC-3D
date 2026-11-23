@@ -1,0 +1,16 @@
+input: skeleton_3d            # skeleton_3d | rgb | skeleton+hoi
+window: {length: 64, stride: 16}
+models:
+  lstm:        {type: lstm, hidden: 256, layers: 2, num_classes: 10}
+  stgcn:       {type: stgcn, num_classes: 10}
+  transformer: {type: transformer, d_model: 256, heads: 8, layers: 4, num_classes: 10}
+train:
+  epochs: 80
+  batch_size: 64
+  lr: 1.0e-3
+  weight_decay: 1.0e-4
+  scheduler: cosine
+vocabulary:
+  primitive: [reach, grasp, release, bend, walk]
+  interaction: [pick, place, carry, cut, assemble]
+  task: [harvesting, assembly, packaging, sorting]

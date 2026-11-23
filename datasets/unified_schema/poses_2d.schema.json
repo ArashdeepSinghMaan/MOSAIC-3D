@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "poses_2d",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "camera_id",
+      "frame_id",
+      "global_id",
+      "skeleton",
+      "keypoints"
+    ],
+    "properties": {
+      "camera_id": {
+        "type": "string"
+      },
+      "frame_id": {
+        "type": "integer"
+      },
+      "global_id": {
+        "type": "integer"
+      },
+      "skeleton": {
+        "enum": [
+          "coco17",
+          "halpe26",
+          "hand21_left",
+          "hand21_right"
+        ]
+      },
+      "keypoints": {
+        "type": "array",
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "description": "[x, y, visibility/confidence]"
+      }
+    }
+  }
+}

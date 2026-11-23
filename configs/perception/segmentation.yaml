@@ -1,0 +1,2 @@
+baseline:   {type: yolo_seg, weights: yolo11m-seg.pt, device: "cuda:0"}
+comparison: {type: sam2, model_id: facebook/sam2.1-hiera-base-plus, device: cuda}
